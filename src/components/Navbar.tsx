@@ -4,8 +4,8 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export const Navbar = () => {
   return (
-    <div className="navbar bg-gray-800 flex justify-between">
-      <div className="">
+    <div className="navbar bg-gray-800 flex flex-col md:flex-row justify-between overflow-hidden">
+      <div className="flex justify-between md:justify-start w-full px-10 md:px-0">
         <a className="btn btn-ghost normal-case text-xl text-white">
           Sports House
         </a>
@@ -17,8 +17,7 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-
-      <div className="relative w-auto md:w-[1100px]">
+      <div className="relative w-full md:w-[300px] lg:w-[500px] xl:w-[700px] 2xl:w-[1100px]">
         <div className="absolute top-0 left-0">
           <div className="dropdown text-gray-400 z-20 hover:text-gray-500">
             <label tabIndex={0} className="btn h-10 min-h-[40px]">
@@ -39,7 +38,7 @@ export const Navbar = () => {
         </div>
         <input
           type="text"
-          className="h-10 pl-24 pr-20 rounded-lg z-0 focus:shadow focus:outline-none w-auto md:w-[1100px]"
+          className="h-10 pl-24 pr-20 rounded-lg z-0 focus:shadow focus:outline-none w-full md:w-[300px] lg:w-[500px] xl:w-[700px] 2xl:w-[1100px]"
           placeholder="Search anything..."
         />
         <div className="absolute top-0 right-0">
@@ -48,7 +47,7 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-      <div className="gap-2">
+      <div className="gap-2 w-full flex justify-end">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
