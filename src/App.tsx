@@ -1,21 +1,27 @@
-import HeroSection from "./components/HeroSection";
-import NavTabs from "./components/NavTabs";
-import { Navbar } from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Signin from "./Pages/Signin";
-import Register from "./Pages/Register";
-import Profile from "./Pages/Profile";
+import Signin from "./pages/Signin";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Homepage from "./pages/Homepage";
+import Missing from "./pages/Missing";
+
 function App() {
   return (
-    <div className="min-w-[320px] bg-[#E3E6E6]">
-      <Navbar />
-      <NavTabs />
-      <Signin />
-      <Register />
-      <Profile />
-      <HeroSection />
-      <Sidebar />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        {/* public routes */}
+        <Route path="/" element={<Homepage />} />
+        <Route path="login" element={<Signin />} />
+        <Route path="register" element={<Register />} />
+
+        {/* private routes */}
+        <Route path="profile" element={<Profile />} />
+
+        {/* catch all */}
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
   );
 }
 

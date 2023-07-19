@@ -1,12 +1,20 @@
 import { IoLocationSharp } from "react-icons/io5";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="navbar bg-gray-800 flex flex-col md:flex-row justify-between overflow-hidden">
       <div className="flex justify-between md:justify-start w-full px-10 md:px-0">
-        <a className="btn btn-ghost normal-case text-xl text-white">
+        <a
+          className="btn btn-ghost normal-case text-xl text-white"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           Sports House
         </a>
         <div className="text-white flex items-end justify-center">
