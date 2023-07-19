@@ -7,7 +7,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="navbar bg-gray-800 flex flex-col md:flex-row justify-between overflow-hidden">
+    <div className="navbar bg-gray-800 flex flex-col md:flex-row justify-between ">
       <div className="flex justify-between md:justify-start w-full px-10 md:px-0">
         <a
           className="btn btn-ghost normal-case text-xl text-white"
