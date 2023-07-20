@@ -1,67 +1,81 @@
-import { IoLocationSharp } from "react-icons/io5";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../features/sidebar/sidebarSlice";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+    if (tabIndex === 1) {
+      dispatch(toggleSidebar());
+    }
+  };
 
   return (
-    <div className="navbar bg-gray-800 flex flex-col md:flex-row justify-between ">
-      <div className="flex justify-between md:justify-start w-full px-10 md:px-0">
+    <div className="navbar flex flex-col md:flex-row justify-between h-[82px] py-[15px] max-w-[1360px] mx-auto px-10">
+      <div className="flex justify-between md:justify-start w-full">
         <a
-          className="btn btn-ghost normal-case text-xl text-white"
+          className="btn btn-ghost normal-case text-xl text-secondary font-bold px-0"
           onClick={() => {
             navigate("/");
           }}
         >
           Sports House
         </a>
-        <div className="text-white flex items-end justify-center">
+        {/* <div className="text-text-color flex items-end justify-center">
           <IoLocationSharp className="text-2xl pb-1" />
           <div>
             <p className="text-gray-400 text-xs">Deliver only </p>
             <h1 className="font-semibold">in Pakistan</h1>
           </div>
-        </div>
-      </div>
-      <div className="relative w-full md:w-[300px] lg:w-[500px] xl:w-[700px] 2xl:w-[1100px]">
-        <div className="absolute top-0 left-0">
-          <div className="dropdown text-gray-400 z-20 hover:text-gray-500">
-            <label tabIndex={0} className="btn h-10 min-h-[40px]">
-              All <IoIosArrowDown />
-            </label>
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <input
-          type="text"
-          className="h-10 pl-24 pr-20 rounded-lg z-0 focus:shadow focus:outline-none w-full md:w-[300px] lg:w-[500px] xl:w-[700px] 2xl:w-[1100px]"
-          placeholder="Search anything..."
-        />
-        <div className="absolute top-0 right-0">
-          <button className="h-10 w-16 rounded-r-lg bg-yellow-500 hover:bg-yellow-600 flex justify-center items-center">
-            <BiSearchAlt2 className="font-semibold text-2xl" />
-          </button>
+        </div> */}
+        <div className="tabs  text-text-color rounded-none">
+          <a
+            className={`tab flex gap-1 ${activeTab === 1 ? "tab-active" : ""}`}
+            onClick={() => handleTabClick(1)}
+          >
+            Category <GiHamburgerMenu />
+          </a>
+          <a
+            className={`tab ${activeTab === 2 ? "tab-active" : ""}`}
+            onClick={() => handleTabClick(2)}
+          >
+            What's New
+          </a>
+          <a
+            className={`tab ${activeTab === 3 ? "tab-active" : ""}`}
+            onClick={() => handleTabClick(3)}
+          >
+            Delivery
+          </a>
         </div>
       </div>
       <div className="gap-2 w-full flex justify-end">
+        <div className="relative w-full md:w-[300px] lg:w-96">
+          <input
+            type="text"
+            className="h-10 px-4 rounded-3xl z-0 focus:shadow focus:outline-none w-full md:w-[300px] lg:w-96 border-2"
+            placeholder="Search anything..."
+          />
+          <div className="absolute top-0 right-0">
+            <button className="h-10 w-16 rounded-r-3xl bg-secondary hover:bg-yellow-600 text-white flex justify-center items-center">
+              <BiSearchAlt2 className="font-semibold text-2xl" />
+            </button>
+          </div>
+        </div>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-white"
+                className="h-5 w-5 text-text-color"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -100,9 +114,13 @@ export const Navbar = () => {
             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
           >
             <li>
-              <a className="justify-between">
+              <a
+                className="justify-between"
+                onClick={() => {
+                  navigate("/profile");
+                }}
+              >
                 Profile
-                <span className="badge">New</span>
               </a>
             </li>
             <li>
@@ -113,6 +131,14 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
+        <button
+          className="bg-yellow-500 hover:bg-yellow-600 py-2 px-3 rounded-md"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Sign in
+        </button>
       </div>
     </div>
   );

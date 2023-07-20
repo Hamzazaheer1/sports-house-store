@@ -3,8 +3,8 @@ import { MdEmail, MdPhone } from "react-icons/md";
 
 const Profile = () => {
   return (
-    <div className="grid grid-cols-4 gap-8 m-8">
-      <div className="bg-white p-8 flex flex-col gap-5 col-span-1 rounded-lg mb-10">
+    <div className="grid grid-cols-4 gap-8 m-8 px-10 max-w-[1360px] mx-auto">
+      <div className="bg-gray-500 p-8 flex flex-col gap-5 col-span-1 rounded-lg mb-10 text-white">
         <img
           src="/assets/profilepic.jpg"
           alt="image"
@@ -12,21 +12,21 @@ const Profile = () => {
         />
         <h4 className="font-semibold text-lg">Jese Leos</h4>
         <div>
-          <p className="text-gray-500">Email address</p>
+          <p className="">Email address</p>
           <div className="flex items-center gap-2">
             <MdEmail />
             <p>hese@gmail.com</p>
           </div>
         </div>
         <div>
-          <p className="text-gray-500">Phone number</p>
+          <p className="">Phone number</p>
           <div className="flex items-center gap-2">
             <MdPhone />
             <p>+92 333 5224777</p>
           </div>
         </div>
         <div>
-          <p className="text-gray-500">Home Address</p>
+          <p className="">Home Address</p>
           <div className="flex items-center gap-2">
             <MdPhone />
             <p>House f5534 Sattlite town rwp</p>

@@ -21,7 +21,7 @@ const NavTabs = () => {
   };
 
   return (
-    <div className="tabs tabs-boxed bg-gray-700 rounded-none">
+    <div className="tabs tabs-boxed bg-secondary rounded-none">
       <a
         className={`tab text-white flex gap-1 ${
           activeTab === 1 ? "tab-active" : ""

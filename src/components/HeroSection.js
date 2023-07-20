@@ -1,21 +1,15 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import "./styles.css";
-
-// import required modules
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 
 const HeroSection = () => {
   return (
-    <>
+    <div className="">
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -25,30 +19,30 @@ const HeroSection = () => {
       >
         <SwiperSlide>
           <img
-            src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
-            className="w-full h-[95vh]"
+            src="/assets/hero1.jpg"
+            className="w-full h-[70vh] object-cover"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-2.jpg"
-            className="w-full h-[95vh]"
+            src="/assets/hero2.jpg"
+            className="w-full h-[70vh] object-cover"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-            className="w-full h-[95vh]"
+            src="/assets/hero3.jpg"
+            className="w-full h-[70vh] object-cover"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
-            className="w-full h-[95vh]"
+            src="/assets/hero4.jpg"
+            className="w-full h-[70vh] object-cover"
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
