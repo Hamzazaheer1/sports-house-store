@@ -19,27 +19,21 @@ const Sidebar = () => {
         <div className="bg-base-100 w-80 p-4 h-screen">
           <ul className="menu">
             <li>
-              <a>Item 1</a>
-            </li>
-            <li>
               <details open>
-                <summary>Parent</summary>
+                <summary>SHOP BY SPORTS</summary>
                 <ul>
                   <li>
-                    <a>level 2 item 1</a>
-                  </li>
-                  <li>
-                    <a>level 2 item 2</a>
+                    <a>level 3 item 1</a>
                   </li>
                   <li>
                     <details open>
-                      <summary>Parent</summary>
+                      <summary>Badminton</summary>
                       <ul>
                         <li>
-                          <a>level 3 item 1</a>
+                          <a>Badminton Accessories</a>
                         </li>
                         <li>
-                          <a>level 3 item 2</a>
+                          <a>Badminton Clothing</a>
                         </li>
                       </ul>
                     </details>
@@ -48,7 +42,30 @@ const Sidebar = () => {
               </details>
             </li>
             <li>
-              <a>Item 3</a>
+              <details open>
+                <summary>FOOTWEAR</summary>
+                <ul>
+                  <li>
+                    <a>level 3 item 1</a>
+                  </li>
+                  <li>
+                    <a>level 3 item 2</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details open>
+                <summary>SPORTSWEAR</summary>
+                <ul>
+                  <li>
+                    <a>level 3 item 1</a>
+                  </li>
+                  <li>
+                    <a>level 3 item 2</a>
+                  </li>
+                </ul>
+              </details>
             </li>
           </ul>
         </div>

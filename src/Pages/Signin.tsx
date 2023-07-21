@@ -6,16 +6,6 @@ const Signin = () => {
 
   return (
     <div className="bg-gray-50 flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 max-h-[80vh]">
-      <a
-        href="#"
-        className="flex items-center mb-6 text-2xl font-semibold text-gray-900 "
-      >
-        <img
-          className="w-8 h-8 mr-2"
-          src="https://www.pngfind.com/pngs/m/56-565024_amazon-logo-png-amazon-png-transparent-png.png"
-          alt="logo "
-        />
-      </a>
       <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 ">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
@@ -69,7 +59,7 @@ const Signin = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#f0c14b] text-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              className="w-full bg-secondary text-white hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
             >
               Sign in
             </button>

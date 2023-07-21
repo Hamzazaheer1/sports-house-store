@@ -29,13 +29,6 @@ export const Navbar = () => {
         >
           Sports House
         </a>
-        {/* <div className="text-text-color flex items-end justify-center">
-          <IoLocationSharp className="text-2xl pb-1" />
-          <div>
-            <p className="text-gray-400 text-xs">Deliver only </p>
-            <h1 className="font-semibold">in Pakistan</h1>
-          </div>
-        </div> */}
         <div className="tabs  text-text-color rounded-none">
           <a
             className={`tab flex gap-1 ${activeTab === 1 ? "tab-active" : ""}`}
@@ -132,7 +125,7 @@ export const Navbar = () => {
           </ul>
         </div>
         <button
-          className="bg-yellow-500 hover:bg-yellow-600 py-2 px-3 rounded-md"
+          className="bg-secondary text-white hover:bg-yellow-600 py-2 px-3 rounded-md"
           onClick={() => {
             navigate("/login");
           }}
