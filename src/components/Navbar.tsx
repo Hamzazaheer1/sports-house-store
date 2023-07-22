@@ -32,13 +32,18 @@ export const Navbar = () => {
         <div className="tabs  text-text-color rounded-none">
           <a
             className={`tab flex gap-1 ${activeTab === 1 ? "tab-active" : ""}`}
-            onClick={() => handleTabClick(1)}
+            onClick={() => {
+              handleTabClick(1);
+            }}
           >
             Category <GiHamburgerMenu />
           </a>
           <a
             className={`tab ${activeTab === 2 ? "tab-active" : ""}`}
-            onClick={() => handleTabClick(2)}
+            onClick={() => {
+              handleTabClick(2);
+              navigate("/products");
+            }}
           >
             What's New
           </a>

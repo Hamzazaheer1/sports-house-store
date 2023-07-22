@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Homepage from "./pages/Homepage";
 import Missing from "./pages/Missing";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="login" element={<Signin />} />
         <Route path="register" element={<Register />} />
+        <Route path="products" element={<ProductsPage />} />
 
         {/* private routes */}
         <Route path="profile" element={<Profile />} />
