@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BiSearchAlt2 } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { toggleSidebar } from "../features/sidebar/sidebarSlice";
+import React, { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { BiSearchAlt2 } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../features/sidebar/sidebarSlice';
 
-export const Navbar = () => {
+function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,55 +21,68 @@ export const Navbar = () => {
   return (
     <div className="navbar flex flex-col md:flex-row justify-between h-[82px] py-[15px] max-w-[1360px] mx-auto px-10">
       <div className="flex justify-between md:justify-start w-full">
-        <a
+        <button
+          type="button"
           className="btn btn-ghost normal-case text-xl text-secondary font-bold px-0"
           onClick={() => {
-            navigate("/");
+            navigate('/');
           }}
         >
           Sports House
-        </a>
+        </button>
         <div className="tabs  text-text-color rounded-none">
-          <a
-            className={`tab flex gap-1 ${activeTab === 1 ? "tab-active" : ""}`}
+          <button
+            type="button"
+            className={`tab flex gap-1 ${activeTab === 1 ? 'tab-active' : ''}`}
             onClick={() => {
               handleTabClick(1);
             }}
           >
-            Category <GiHamburgerMenu />
-          </a>
-          <a
-            className={`tab ${activeTab === 2 ? "tab-active" : ""}`}
+            Category
+            <GiHamburgerMenu />
+          </button>
+          <button
+            type="button"
+            className={`tab ${activeTab === 2 ? 'tab-active' : ''}`}
             onClick={() => {
               handleTabClick(2);
-              navigate("/products");
+              navigate('/products');
             }}
           >
-            What's New
-          </a>
-          <a
-            className={`tab ${activeTab === 3 ? "tab-active" : ""}`}
+            What&apos;s New
+          </button>
+          <button
+            type="button"
+            className={`tab ${activeTab === 3 ? 'tab-active' : ''}`}
             onClick={() => handleTabClick(3)}
           >
             Delivery
-          </a>
+          </button>
         </div>
       </div>
       <div className="gap-2 w-full flex justify-end">
         <div className="relative w-full md:w-[300px] lg:w-96">
           <input
             type="text"
+            id="search"
             className="h-10 px-4 rounded-3xl z-0 focus:shadow focus:outline-none w-full md:w-[300px] lg:w-96 border-2"
             placeholder="Search anything..."
           />
           <div className="absolute top-0 right-0">
-            <button className="h-10 w-16 rounded-r-3xl bg-secondary hover:bg-yellow-600 text-white flex justify-center items-center">
+            <button
+              type="button"
+              className="h-10 w-16 rounded-r-3xl bg-secondary hover:bg-yellow-600 text-white flex justify-center items-center"
+            >
               <BiSearchAlt2 className="font-semibold text-2xl" />
             </button>
           </div>
         </div>
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <button
+            type="button"
+            tabIndex={0}
+            className="btn btn-ghost btn-circle"
+          >
             <div className="indicator">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +100,9 @@ export const Navbar = () => {
               </svg>
               <span className="badge badge-sm indicator-item">8</span>
             </div>
-          </label>
-          <div
+          </button>
+          <button
+            type="button"
             tabIndex={0}
             className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
           >
@@ -96,43 +110,52 @@ export const Navbar = () => {
               <span className="font-bold text-lg">8 Items</span>
               <span className="text-info">Subtotal: $999</span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+                <button type="button" className="btn btn-primary btn-block">
+                  View cart
+                </button>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <button
+            type="button"
+            tabIndex={0}
+            className="btn btn-ghost btn-circle avatar"
+          >
             <div className="w-10 rounded-full">
-              <img src="/assets/profilepic.jpg" />
+              <img src="/assets/profilepic.jpg" alt="profilepic" />
             </div>
-          </label>
-          <ul
+          </button>
+          <button
+            type="button"
             tabIndex={0}
             className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
           >
             <li>
-              <a
+              <button
+                type="button"
                 className="justify-between"
                 onClick={() => {
-                  navigate("/profile");
+                  navigate('/profile');
                 }}
               >
                 Profile
-              </a>
+              </button>
             </li>
             <li>
-              <a>Settings</a>
+              <span>Settings</span>
             </li>
             <li>
-              <a>Logout</a>
+              <span>Logout</span>
             </li>
-          </ul>
+          </button>
         </div>
         <button
+          type="button"
           className="bg-secondary text-white hover:bg-yellow-600 py-2 px-3 rounded-md"
           onClick={() => {
-            navigate("/login");
+            navigate('/login');
           }}
         >
           Sign in
@@ -140,4 +163,6 @@ export const Navbar = () => {
       </div>
     </div>
   );
-};
+}
+
+export default Navbar;

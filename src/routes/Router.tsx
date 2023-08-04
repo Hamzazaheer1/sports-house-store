@@ -1,8 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { ROUTES } from "./Routes";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ROUTES } from './Routes';
 
-const Router = () => {
+function Router() {
   return <div>Router</div>;
-};
+}
 
 export default Router;

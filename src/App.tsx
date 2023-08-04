@@ -1,11 +1,12 @@
-import Signin from "./pages/Signin";
-import Register from "./pages/Register";
-import Profile from "./pages/Profile";
-import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Homepage from "./pages/Homepage";
-import Missing from "./pages/Missing";
-import ProductsPage from "./pages/ProductsPage";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Signin from './pages/Signin';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import Layout from './components/Layout';
+import Homepage from './pages/Homepage';
+import Missing from './pages/Missing';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (

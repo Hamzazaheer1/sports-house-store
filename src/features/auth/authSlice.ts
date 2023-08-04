@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type AuthState = {
   auth: boolean;
@@ -9,7 +9,7 @@ const initialState: AuthState = {
 };
 
 export const sidebarSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
     setAuthState: (state) => {
@@ -18,8 +18,7 @@ export const sidebarSlice = createSlice({
   },
 });
 
-export const authState = (state: { auth: AuthState }) =>
-  state.auth.auth;
+export const authState = (state: { auth: AuthState }) => state.auth.auth;
 
 export const { setAuthState } = sidebarSlice.actions;
 export default sidebarSlice.reducer;

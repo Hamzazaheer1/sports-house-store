@@ -1,36 +1,37 @@
-import React from "react";
+import React from 'react';
 
-const ProductsPage = () => {
+function ProductsPage() {
   return (
     <div className="max-w-[1360px] px-10 mx-auto">
       <div className="grid grid-cols-4 gap-2">
-        <div className="bg-gray-300 border-2 border-red-500 col-span-1"></div>
+        <div className="bg-gray-300 border-2 border-red-500 col-span-1" />
         <div className="col-span-3">
           {/* top bar */}
           <div className="w-full bg-blue-500 flex justify-between ">
             <p>Showing 9 results from total 1000000</p>
             <div className="dropdown dropdown-end flex items-center gap-1">
               <p>Sort By</p>
-              <label tabIndex={0} className="btn btn-ghost">
+              <button type="button" tabIndex={0} className="btn btn-ghost">
                 Popularity
-              </label>
-              <ul
+              </button>
+              <button
+                type="button"
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 -bottom-28 bg-blue-300"
               >
                 <li>
-                  <a className="justify-between">
+                  <div className="justify-between">
                     Profile
                     <span className="badge">New</span>
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <div>Settings</div>
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <div>Logout</div>
                 </li>
-              </ul>
+              </button>
             </div>
           </div>
           {/* cards */}
@@ -42,7 +43,9 @@ const ProductsPage = () => {
               <div className="card-body p-4">
                 <div className="flex items-center justify-between">
                   <h2 className="card-title">Shoes!</h2>
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button type="button" className="btn btn-primary">
+                    Buy Now
+                  </button>
                 </div>
                 <div className="flex items-center justify-between">
                   <h2 className="">2 Colors</h2>
@@ -56,7 +59,9 @@ const ProductsPage = () => {
               <div className="card-body p-4">
                 <div className="flex items-center justify-between">
                   <h2 className="card-title">Shoes!</h2>
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button type="button" className="btn btn-primary">
+                    Buy Now
+                  </button>
                 </div>
                 <div className="flex items-center justify-between">
                   <h2 className="">2 Colors</h2>
@@ -70,7 +75,9 @@ const ProductsPage = () => {
               <div className="card-body p-4">
                 <div className="flex items-center justify-between">
                   <h2 className="card-title">Shoes!</h2>
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button type="button" className="btn btn-primary">
+                    Buy Now
+                  </button>
                 </div>
                 <div className="flex items-center justify-between">
                   <h2 className="">2 Colors</h2>
@@ -82,6 +89,6 @@ const ProductsPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProductsPage;

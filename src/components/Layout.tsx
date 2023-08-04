@@ -1,10 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { Navbar } from "./Navbar";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar';
 // import NavTabs from "./NavTabs";
-import Sidebar from "./Sidebar";
-import Topbar from "./Topbar";
+import Sidebar from './Sidebar';
+import Topbar from './Topbar';
 
-const Layout = () => {
+function Layout() {
   return (
     <div className="min-w-[320px]">
       <Topbar />
@@ -16,6 +17,6 @@ const Layout = () => {
       </main>
     </div>
   );
-};
+}
 
 export default Layout;

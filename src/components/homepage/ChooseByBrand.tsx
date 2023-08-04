@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const ChooseByBrand = () => {
+function ChooseByBrand() {
   return (
     <div className="my-20 max-w-[1360px] mx-auto px-10">
       <h2 className="text-text-color text-3xl mb-10 mt-5">
@@ -98,6 +98,6 @@ const ChooseByBrand = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ChooseByBrand;
